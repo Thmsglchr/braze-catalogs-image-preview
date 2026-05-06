@@ -1,8 +1,9 @@
 .braze-catalog-image-preview-root {
   --braze-catalog-image-preview-purple-900: #2b075f;
-  --braze-catalog-image-preview-purple-700: #5f1bd7;
+  --braze-catalog-image-preview-purple-700: #5920d4;
   --braze-catalog-image-preview-purple-600: #6615e5;
-  --braze-catalog-image-preview-purple-500: #7a35f0;
+  --braze-catalog-image-preview-purple-500: #7b35ee;
+  --braze-catalog-image-preview-purple-hover: #7c35e8;
   --braze-catalog-image-preview-text: #171321;
   --braze-catalog-image-preview-muted: #5f6577;
   --braze-catalog-image-preview-border: #d9dbe7;
@@ -96,7 +97,7 @@
   min-height: 30px;
   padding: 0 10px;
   border: 1px solid var(--braze-catalog-image-preview-purple-600);
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--braze-catalog-image-preview-purple-600);
   color: #fff;
   cursor: pointer;
@@ -104,13 +105,18 @@
   font-weight: 700;
   line-height: 28px;
   white-space: nowrap;
-  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
 }
 
-.braze-catalog-image-preview-copy-button:hover,
+.braze-catalog-image-preview-copy-button:hover {
+  border-color: var(--braze-catalog-image-preview-purple-hover);
+  background: var(--braze-catalog-image-preview-purple-hover);
+  transform: translateY(-1px);
+}
+
 .braze-catalog-image-preview-copy-button:focus-visible {
-  border-color: var(--braze-catalog-image-preview-purple-700);
-  background: var(--braze-catalog-image-preview-purple-700);
+  border-color: var(--braze-catalog-image-preview-purple-hover);
+  background: var(--braze-catalog-image-preview-purple-hover);
   box-shadow: 0 0 0 3px var(--braze-catalog-image-preview-focus);
   outline: 0;
 }
