@@ -136,7 +136,7 @@
   align-items: center;
   justify-content: center;
   padding: 28px;
-  background: rgba(43, 7, 95, 0.72);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .braze-catalog-image-preview-modal-panel {
@@ -229,16 +229,24 @@
 
 .braze-catalog-image-preview-modal-url {
   overflow: hidden;
-  min-height: 30px;
+  min-height: 32px;
   padding: 6px 10px;
-  border: 1px solid var(--braze-catalog-image-preview-border);
+  border: 1px solid var(--braze-catalog-image-preview-border-strong);
   border-radius: 6px;
   background: var(--braze-catalog-image-preview-surface-subtle);
-  color: var(--braze-catalog-image-preview-purple-700);
-  font-size: 12px;
-  line-height: 1.4;
+  color: var(--braze-catalog-image-preview-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+  line-height: 18px;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.braze-catalog-image-preview-modal-url:hover,
+.braze-catalog-image-preview-modal-url:focus-visible {
+  color: var(--braze-catalog-image-preview-text);
+  outline: 2px solid var(--braze-catalog-image-preview-focus);
+  outline-offset: 1px;
 }
 
 .braze-catalog-image-preview-modal-copy {
