@@ -1,0 +1,266 @@
+.braze-catalog-image-preview-root {
+  --braze-catalog-image-preview-purple-900: #2b075f;
+  --braze-catalog-image-preview-purple-700: #5f1bd7;
+  --braze-catalog-image-preview-purple-600: #6615e5;
+  --braze-catalog-image-preview-purple-500: #7a35f0;
+  --braze-catalog-image-preview-text: #171321;
+  --braze-catalog-image-preview-muted: #5f6577;
+  --braze-catalog-image-preview-border: #d9dbe7;
+  --braze-catalog-image-preview-border-strong: #b7bbca;
+  --braze-catalog-image-preview-surface: #ffffff;
+  --braze-catalog-image-preview-surface-subtle: #f7f7fb;
+  --braze-catalog-image-preview-focus: rgba(102, 21, 229, 0.24);
+  --braze-catalog-image-preview-shadow: 0 18px 56px rgba(23, 19, 33, 0.28);
+  box-sizing: border-box;
+  color: var(--braze-catalog-image-preview-text);
+  font-family: inherit;
+}
+
+.braze-catalog-image-preview-root *,
+.braze-catalog-image-preview-root *::before,
+.braze-catalog-image-preview-root *::after {
+  box-sizing: border-box;
+}
+
+.braze-catalog-image-preview-modal-open {
+  overflow: hidden !important;
+}
+
+.braze-catalog-image-preview-thumbnail-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 190px;
+  vertical-align: middle;
+}
+
+.braze-catalog-image-preview-thumbnail-button,
+.braze-catalog-image-preview-copy-button,
+.braze-catalog-image-preview-modal-close {
+  appearance: none;
+  border: 0;
+  font: inherit;
+}
+
+.braze-catalog-image-preview-thumbnail-button {
+  width: 74px;
+  height: 74px;
+  flex: 0 0 74px;
+  padding: 4px;
+  border: 1px solid var(--braze-catalog-image-preview-border);
+  border-radius: 6px;
+  background: var(--braze-catalog-image-preview-surface);
+  cursor: zoom-in;
+  transition: border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+}
+
+.braze-catalog-image-preview-thumbnail-button:hover,
+.braze-catalog-image-preview-thumbnail-button:focus-visible {
+  border-color: var(--braze-catalog-image-preview-purple-600);
+  box-shadow: 0 0 0 3px var(--braze-catalog-image-preview-focus);
+  outline: 0;
+  outline-offset: 1px;
+}
+
+.braze-catalog-image-preview-thumbnail-button:hover {
+  transform: translateY(-1px);
+}
+
+.braze-catalog-image-preview-thumbnail-button-error {
+  display: grid;
+  place-items: center;
+  cursor: zoom-in;
+  background: #fbf8ff;
+}
+
+.braze-catalog-image-preview-thumbnail {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: repeating-conic-gradient(#eef0f6 0% 25%, #fff 0% 50%) 50% / 12px 12px;
+}
+
+.braze-catalog-image-preview-thumbnail-error-label {
+  display: block;
+  max-width: 58px;
+  color: var(--braze-catalog-image-preview-purple-700);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.braze-catalog-image-preview-copy-button {
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--braze-catalog-image-preview-purple-600);
+  border-radius: 6px;
+  background: var(--braze-catalog-image-preview-purple-600);
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 28px;
+  white-space: nowrap;
+  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.braze-catalog-image-preview-copy-button:hover,
+.braze-catalog-image-preview-copy-button:focus-visible {
+  border-color: var(--braze-catalog-image-preview-purple-700);
+  background: var(--braze-catalog-image-preview-purple-700);
+  box-shadow: 0 0 0 3px var(--braze-catalog-image-preview-focus);
+  outline: 0;
+}
+
+.braze-catalog-image-preview-copy-button:disabled {
+  cursor: default;
+  opacity: 0.72;
+}
+
+.braze-catalog-image-preview-fallback-url {
+  overflow-wrap: anywhere;
+}
+
+.braze-catalog-image-preview-modal[hidden] {
+  display: none !important;
+}
+
+.braze-catalog-image-preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(43, 7, 95, 0.72);
+}
+
+.braze-catalog-image-preview-modal-panel {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(960px, calc(100vw - 56px));
+  max-height: calc(100vh - 56px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: var(--braze-catalog-image-preview-surface);
+  box-shadow: var(--braze-catalog-image-preview-shadow);
+  overflow: hidden;
+}
+
+.braze-catalog-image-preview-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--braze-catalog-image-preview-border);
+  background: var(--braze-catalog-image-preview-surface);
+}
+
+.braze-catalog-image-preview-modal-title {
+  margin: 0;
+  color: var(--braze-catalog-image-preview-text);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.braze-catalog-image-preview-modal-close {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--braze-catalog-image-preview-border-strong);
+  border-radius: 6px;
+  background: var(--braze-catalog-image-preview-surface);
+  color: var(--braze-catalog-image-preview-text);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 30px;
+  transition: border-color 120ms ease, box-shadow 120ms ease, color 120ms ease;
+}
+
+.braze-catalog-image-preview-modal-close:hover,
+.braze-catalog-image-preview-modal-close:focus-visible {
+  border-color: var(--braze-catalog-image-preview-purple-600);
+  color: var(--braze-catalog-image-preview-purple-700);
+  box-shadow: 0 0 0 3px var(--braze-catalog-image-preview-focus);
+  outline: 0;
+}
+
+.braze-catalog-image-preview-modal-image-wrap {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  max-height: calc(100vh - 200px);
+  padding: 24px;
+  background: var(--braze-catalog-image-preview-surface-subtle);
+}
+
+.braze-catalog-image-preview-modal-image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 248px);
+  object-fit: contain;
+  background: repeating-conic-gradient(#eef0f3 0% 25%, #fff 0% 50%) 50% / 16px 16px;
+}
+
+.braze-catalog-image-preview-modal-error {
+  margin: 12px 0 0;
+  color: #9b1c1c;
+  font-size: 13px;
+}
+
+.braze-catalog-image-preview-modal-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-top: 1px solid var(--braze-catalog-image-preview-border);
+  background: var(--braze-catalog-image-preview-surface);
+}
+
+.braze-catalog-image-preview-modal-url {
+  overflow: hidden;
+  min-height: 30px;
+  padding: 6px 10px;
+  border: 1px solid var(--braze-catalog-image-preview-border);
+  border-radius: 6px;
+  background: var(--braze-catalog-image-preview-surface-subtle);
+  color: var(--braze-catalog-image-preview-purple-700);
+  font-size: 12px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.braze-catalog-image-preview-modal-copy {
+  min-width: 84px;
+}
+
+@media (max-width: 600px) {
+  .braze-catalog-image-preview-modal {
+    padding: 12px;
+  }
+
+  .braze-catalog-image-preview-modal-panel {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+  }
+
+  .braze-catalog-image-preview-modal-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .braze-catalog-image-preview-modal-url {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}

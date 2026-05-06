@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Braze Catalog Image Preview",
+  "description": "Shows inline image thumbnails for image URL values on Braze Catalog pages.",
+  "version": "0.1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.braze.com/*",
+        "https://*.braze.eu/*"
+      ],
+      "js": [
+        "src/contentScript.js"
+      ],
+      "css": [
+        "src/styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://*.braze.com/*",
+    "https://*.braze.eu/*"
+  ]
+}
